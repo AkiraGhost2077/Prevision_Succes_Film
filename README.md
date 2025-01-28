@@ -1,54 +1,61 @@
-<header>
+# Prévision du Succès d’un Film 🎥
 
-<!--
-  <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
--->
+## 🚀 Introduction
+L'objectif de ce projet est de prédire le succès des films au box-office en utilisant des données comme le **budget**, les **recettes**, le **genre**, les **acteurs**, et les **réalisateurs**. Grâce à l’analyse des données de films, nous pouvons mieux comprendre les facteurs influençant leur succès.
 
-# GitHub Pages
-
-_Create a site or blog from your GitHub repositories with GitHub Pages._
-
-</header>
-
-<!--
-  <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
--->
-
-## Step 1: Enable GitHub Pages
-
-_Welcome to GitHub Pages and Jekyll :tada:!_
-
-The first step is to enable GitHub Pages on this [repository](https://docs.github.com/en/get-started/quickstart/github-glossary#repository). When you enable GitHub Pages on a repository, GitHub takes the content that's on the main branch and publishes a website based on its contents.
-
-### :keyboard: Activity: Enable GitHub Pages
-
-1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-1. Under your repository name, click **Settings**.
-1. Click **Pages** in the **Code and automation** section.
-1. Ensure "Deploy from a branch" is selected from the **Source** drop-down menu, and then select `main` from the **Branch** drop-down menu.
-1. Click the **Save** button.
-1. Wait about _one minute_ then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
-   > Turning on GitHub Pages creates a deployment of your repository. GitHub Actions may take up to a minute to respond while waiting for the deployment. Future steps will be about 20 seconds; this step is slower.
-   > **Note**: In the **Pages** of **Settings**, the **Visit site** button will appear at the top. Click the button to see your GitHub Pages site.
-
-<footer>
-
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
+### Problématique
+Quels sont les éléments clés qui influencent le succès d’un film ? Peut-on prédire ce succès à partir des données disponibles ?
 
 ---
 
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/github-pages) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
+## ⚙️ Étapes Avancées & Contributions
 
-&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+### 1. **Importation et Préparation des Données**
+   - **Données** : Utilisation de sources comme IMDb, TMDb ou Kaggle pour enrichir le dataset.
+   - **Prétraitement** : Gestion des valeurs manquantes et encodage des variables catégoriques.
 
-</footer>
+### 2. **Visualisations Impactantes**
+   - Création de visualisations comme des histogrammes du ROI, des graphiques des genres et du ROI moyen, ainsi que des nuages de points.
+
+---
+
+## 🧠 Méthodologie & Modélisation
+
+### 1. **Modèles de Base**
+   - Régression linéaire pour une première approche.
+   
+### 2. **Modèles Avancés**
+   - Random Forest, XGBoost et Gradient Boosting pour améliorer la précision des prédictions.
+
+---
+
+## 🚀 Prochaines Étapes
+
+### 1. **Collecte de Données Complètes**
+   - Enrichir le modèle avec des données supplémentaires sur les films (acteurs, réalisateurs, etc.).
+
+### 2. **Amélioration des Modèles**
+   - Tester des modèles plus sophistiqués et ajuster les hyperparamètres.
+
+### 3. **Tableau de Bord Interactif**
+   - Développer une interface utilisateur interactive avec **Streamlit** pour permettre aux utilisateurs d'explorer les prédictions.
+
+---
+
+## 🛠️ Améliorations Futures
+
+1. **Application Interactive avec Streamlit**
+2. **Optimisation des Modèles**
+3. **Scalabilité** via des services cloud comme AWS ou GCP.
+
+---
+
+## 🤝 Let's Work Together!
+
+Le projet est en constante évolution. Chacun est encouragé à contribuer, que ce soit par des améliorations sur le modèle, des visualisations, ou l'ajout de nouvelles fonctionnalités.
+
+---
+
+## 🔥 Prochain Sprint :
+   - **Modèles Avancés** : Tester XGBoost et Random Forests.
+   - **Tableau de bord** : Créer un prototype de tableau de bord interactif.
