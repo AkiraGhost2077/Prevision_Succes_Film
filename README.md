@@ -1,7 +1,7 @@
 # Prévision du Succès d’un Film 🎥
 
 ## 🚀 Introduction
-L'objectif de ce projet est de prédire le succès des films au box-office en utilisant des données comme le **budget**, les **recettes**, le **genre**, les **acteurs**, et les **réalisateurs**. Grâce à l’analyse des données de films, nous pouvons mieux comprendre les facteurs influençant leur succès.
+L'objectif de ce projet est de prédire le succès des films au box-office en utilisant des données comme le **budget**, les **recettes**, le **genre**, les **acteurs**,**Le directeur de la Photographie**,  et les **réalisateurs**. Grâce à l’analyse des données de films, nous pouvons mieux comprendre les facteurs influençant leur succès.
 
 ### Problématique
 Quels sont les éléments clés qui influencent le succès d’un film ? Peut-on prédire ce succès à partir des données disponibles ?
