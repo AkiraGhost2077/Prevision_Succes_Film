@@ -26,9 +26,12 @@ if page == pages[0]:
     st.dataframe(df.describe())
     if st.checkbox("Afficher les NA"):
         st.dataframe(df.isna().sum())
-elif page == "DataVizualization":
-    st.write("Bienvenue sur la page DataVizualization")
-    # Ajoute ici tes graphiques et visualisations
-elif page == "Modélisation":
-    st.write("Bienvenue sur la page Modélisation")
+elif page == pages[1]:
+    st.write("### DataVizualization")
+    # Affichage de la distribution de la variable cible "Survived"
+    fig = plt.figure()
+    sns.countplot(x='Survived', data=df)
+    st.pyplot(fig)
+elif page == pages[2]:
+    st.write("### Modélisation")
     # Ajoute ici le code de modélisation
