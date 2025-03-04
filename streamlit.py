@@ -18,8 +18,8 @@ st.sidebar.title("Sommaire")
 pages = ["Exploration", "DataVizualization", "Modélisation"]
 page = st.sidebar.radio("Aller vers", pages)
 
-# Afficher le contenu selon la page sélectionnée
-if page == "Exploration":
+if page == pages[0]:
+    st.write("### Introduction")
     st.write("✅ Fichier CSV chargé avec succès !")
     st.dataframe(df.head())  # Afficher les premières lignes du DataFrame
 elif page == "DataVizualization":
