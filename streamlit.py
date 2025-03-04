@@ -18,5 +18,13 @@ st.sidebar.title("Sommaire")
 pages = ["Exploration", "DataVizualization", "Modélisation"]
 page = st.sidebar.radio("Aller vers", pages)
 
-st.write("✅ Fichier CSV chargé avec succès !")
-st.dataframe(df.head())  # Afficher les premières lignes du DataFrame
+# Afficher le contenu selon la page sélectionnée
+if page == "Exploration":
+    st.write("✅ Fichier CSV chargé avec succès !")
+    st.dataframe(df.head())  # Afficher les premières lignes du DataFrame
+elif page == "DataVizualization":
+    st.write("Bienvenue sur la page DataVizualization")
+    # Ajoute ici tes graphiques et visualisations
+elif page == "Modélisation":
+    st.write("Bienvenue sur la page Modélisation")
+    # Ajoute ici le code de modélisation
