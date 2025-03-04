@@ -28,10 +28,31 @@ if page == pages[0]:
         st.dataframe(df.isna().sum())
 elif page == pages[1]:
     st.write("### DataVizualization")
-    # Affichage de la distribution de la variable cible "Survived"
+    
+    # Distribution de la variable cible "Survived"
     fig = plt.figure()
     sns.countplot(x='Survived', data=df)
+    plt.title("Distribution de la variable 'Survived'")
     st.pyplot(fig)
+    
+    # Répartition du genre des passagers
+    fig = plt.figure()
+    sns.countplot(x='Sex', data=df)
+    plt.title("Répartition du genre des passagers")
+    st.pyplot(fig)
+    
+    # Répartition des classes des passagers
+    fig = plt.figure()
+    sns.countplot(x='Pclass', data=df)
+    plt.title("Répartition des classes des passagers")
+    st.pyplot(fig)
+    
+    # Distribution de l'âge des passagers
+    fig = plt.figure()
+    sns.histplot(x='Age', data=df, kde=True)  # Utilisation de histplot qui retourne une figure
+    plt.title("Distribution de l'âge des passagers")
+    st.pyplot(fig)
+    
 elif page == pages[2]:
     st.write("### Modélisation")
     # Ajoute ici le code de modélisation
