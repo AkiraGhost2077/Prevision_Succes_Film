@@ -26,6 +26,7 @@ if page == pages[0]:
     st.dataframe(df.describe())
     if st.checkbox("Afficher les NA"):
         st.dataframe(df.isna().sum())
+        
 elif page == pages[1]:
     st.write("### DataVizualization")
     
@@ -49,9 +50,25 @@ elif page == pages[1]:
     
     # Distribution de l'âge des passagers
     fig = plt.figure()
-    sns.histplot(x='Age', data=df, kde=True)  # Utilisation de histplot qui retourne une figure
+    sns.histplot(x='Age', data=df, kde=True)
     plt.title("Distribution de l'âge des passagers")
     st.pyplot(fig)
+    
+    # (d) Countplot de la variable cible en fonction du genre.
+    fig = plt.figure()
+    sns.countplot(x='Survived', hue='Sex', data=df)
+    plt.title("Countplot de 'Survived' par genre")
+    st.pyplot(fig)
+    
+    # (e) Plot de la variable cible en fonction des classes.
+    cat_fig = sns.catplot(x='Pclass', y='Survived', data=df, kind='point')
+    plt.title("Point plot de 'Survived' en fonction des classes")
+    st.pyplot(cat_fig.fig)
+    
+    # (f) Plot de la variable cible en fonction des âges.
+    lm_fig = sns.lmplot(x='Age', y='Survived', hue="Pclass", data=df)
+    plt.title("Relation entre 'Age' et 'Survived' selon la classe")
+    st.pyplot(lm_fig.fig)
     
 elif page == pages[2]:
     st.write("### Modélisation")
