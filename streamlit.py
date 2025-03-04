@@ -21,7 +21,11 @@ page = st.sidebar.radio("Aller vers", pages)
 if page == pages[0]:
     st.write("### Introduction")
     st.write("✅ Fichier CSV chargé avec succès !")
-    st.dataframe(df.head())  # Afficher les premières lignes du DataFrame
+    st.dataframe(df.head(10))  # Afficher les 10 premières lignes du DataFrame
+    st.write("Dimensions du dataframe :", df.shape)
+    st.dataframe(df.describe())
+    if st.checkbox("Afficher les NA"):
+        st.dataframe(df.isna().sum())
 elif page == "DataVizualization":
     st.write("Bienvenue sur la page DataVizualization")
     # Ajoute ici tes graphiques et visualisations
