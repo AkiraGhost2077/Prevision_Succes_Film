@@ -54,18 +54,18 @@ elif page == pages[1]:
     plt.title("Distribution de l'âge des passagers")
     st.pyplot(fig)
     
-    # (d) Countplot de la variable cible en fonction du genre.
+    # Countplot de la variable cible en fonction du genre.
     fig = plt.figure()
     sns.countplot(x='Survived', hue='Sex', data=df)
     plt.title("Countplot de 'Survived' par genre")
     st.pyplot(fig)
     
-    # (e) Plot de la variable cible en fonction des classes.
+    # Plot de la variable cible en fonction des classes.
     cat_fig = sns.catplot(x='Pclass', y='Survived', data=df, kind='point')
     plt.title("Point plot de 'Survived' en fonction des classes")
     st.pyplot(cat_fig.fig)
     
-    # (f) Plot de la variable cible en fonction des âges.
+    # Plot de la variable cible en fonction des âges.
     lm_fig = sns.lmplot(x='Age', y='Survived', hue="Pclass", data=df)
     plt.title("Relation entre 'Age' et 'Survived' selon la classe")
     st.pyplot(lm_fig.fig)
@@ -124,16 +124,20 @@ elif page == pages[2]:
         clf.fit(X_train, y_train)
         return clf
     
+    # Entraînement du classifieur choisi
     clf = prediction(option)
     
-    # Fonction pour retourner l'accuracy ou la matrice de confusion
-    def scores(clf, choice):
-        if choice == 'Accuracy':
-            return clf.score(X_test, y_test)
-        elif choice == 'Confusion matrix':
-            return confusion_matrix(y_test, clf.predict(X_test))
+    # Utilisation de st.radio() pour choisir l'affichage des résultats
+    display = st.radio('Que souhaitez-vous montrer ?', ('Accuracy', 'Confusion matrix'))
+    if display == 'Accuracy':
+        st.write(scores := clf.score(X_test, y_test))
+    elif display == 'Confusion matrix':
+        st.dataframe(confusion_matrix(y_test, clf.predict(X_test)))
     
-    # Interface utilisateur pour choisir la métrique d'évaluation
-    metric_choice = st.selectbox("Choisir une métrique", ['Accuracy', 'Confusion matrix'])
-    result = scores(clf, metric_choice)
-    st.write("Résultat :", result)
+    # Une version alternative en utilisant la fonction scores définie précédemment :
+    # def scores(clf, choice):
+    #     if choice == 'Accuracy':
+    #         return clf.score(X_test, y_test)
+    #     elif choice == 'Confusion matrix':
+    #         return confusion_matrix(y_test, clf.predict(X_test))
+    # st.write("Résultat :", scores(clf, display))
